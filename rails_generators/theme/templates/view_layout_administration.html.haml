@@ -26,11 +26,12 @@
           .clear
         #main-navigation
           %ul
+          -# main-nav-entry #-
           .clear
       #wrapper
         .flash
           - flash.each do |type, message|
-            - haml_tag(:div, {:class => "message #{type}"}) do
+            .message{:class => type.to_s}
               %p= message
         #main
           = yield

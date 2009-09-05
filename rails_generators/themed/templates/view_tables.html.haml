@@ -1,0 +1,48 @@
+.block
+  .secondary-navigation
+    %ul
+      %li.first.active
+        = link_to 'List', <%= controller_routing_path %>_path
+      %li
+        = link_to 'New', new_<%= singular_controller_routing_path %>_path
+    .clear
+  .content
+    %h2.title
+      All
+      <%= plural_model_name %>
+    .inner
+      %table.table
+        %tr
+          %th.first
+            ID
+          <% unless columns.empty? %>
+          %th
+            <%= columns.first.name.capitalize %>
+          <% end %>
+          %th
+            Created at
+          %th.last
+            \&nbsp;
+        - @<%= plural_resource_name %>.each do |<%= resource_name %>|
+          %tr{:class => cycle("odd","even")}
+            %td
+              = <%= resource_name %>.id
+            <% unless columns.empty? %>
+            %td
+              = link_to <%= resource_name %>.<%= columns.first.name %>, <%= singular_controller_routing_path %>_path(<%= resource_name %>)
+            <% end %>
+            %td
+              = <%= resource_name %>.created_at
+            %td.last
+              = link_to 'show', <%= singular_controller_routing_path %>_path(<%= resource_name %>)
+              |
+              = link_to 'edit', edit_<%= singular_controller_routing_path %>_path(<%= resource_name %>)
+              |
+              = link_to 'destroy', <%= singular_controller_routing_path %>_path(<%= resource_name %>), :method => :delete, :confirm => 'Are you sure?'
+      .actions-bar
+        .actions
+        <% if options[:will_paginate] %>
+        = will_paginate @<%= resource_name %>
+        <% end %>
+        .clear
+- content_for :sidebar, render(:partial => 'sidebar')

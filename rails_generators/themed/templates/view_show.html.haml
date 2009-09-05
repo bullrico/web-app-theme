@@ -1,0 +1,21 @@
+.block
+  .secondary-navigation
+    %ul
+      %li.first
+        = link_to 'List', <%= controller_routing_path %>_path
+      %li
+        = link_to 'New', new_<%= singular_controller_routing_path %>_path
+      %li.active
+        = link_to 'Show', <%= singular_controller_routing_path %>_path
+    .clear
+  .content
+    .inner
+    <% columns.each do |column| %>
+      %p
+        %b
+          <%= column.name.capitalize %>
+          \:
+        = @<%= resource_name %>.<%= column.name %>
+    <% end %>
+      = link_to 'Edit', edit_<%= singular_controller_routing_path %>_path(@<%= resource_name %>)
+- content_for :sidebar, render(:partial => 'sidebar')

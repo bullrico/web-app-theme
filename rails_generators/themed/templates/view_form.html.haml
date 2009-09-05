@@ -1,0 +1,11 @@
+<% columns.each do |column| %>
+.group
+  = f.label :<%= column.name %>, "<%= column.name.capitalize %>", :class => :label
+  = f.<%= column.field_type %> :<%= column.name %>, :class => '<%= column.field_type %>'
+  %span.description
+    Ex: a simple text
+<% end %>
+.group.navform
+  %input.button{ :type => "submit", :value => "Save &rarr;" }
+  or
+  = link_to 'Cancel', <%= controller_routing_path %>_path
