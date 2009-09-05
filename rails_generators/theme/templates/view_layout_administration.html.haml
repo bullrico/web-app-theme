@@ -1,0 +1,44 @@
+!!! Strict
+%html{ :lang => "en", :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
+    %title
+      <%= options[:app_name] %>
+    = stylesheet_link_tag 'web_app_theme'
+  %body
+    #container
+      #header
+        %h1
+          %a{ :href => "/" }
+            <%= options[:app_name] %>
+        #user-navigation
+          %ul
+            %li
+              %a{ :href => "#" }
+                Profile
+            %li
+              %a{ :href => "#" }
+                Settings
+            %li
+              -# TODO: replace "/logout" by a route
+              %a.logout{ :href => "/logout" }
+                Logout
+          .clear
+        #main-navigation
+          %ul
+          .clear
+      #wrapper
+        .flash
+          - flash.each do |type, message|
+            - haml_tag(:div, {:class => "message #{type}"}) do
+              %p= message
+        #main
+          = yield
+          #footer
+            .block
+              -# TODO: fix your copyright
+              %p
+                Copyright &copy; 2009 Your Site.
+        #sidebar
+          = yield :sidebar
+        .clear
