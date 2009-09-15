@@ -2,3 +2,6 @@
 ./script/generate themed ControllerPath ModelName
 ./script/generate themed ControllerPath ModelName --layout=application
 ./script/generate themed ControllerPath ModelName --with_will_paginate
+
+adding views for AuthLogic:
+./script/generate themed --layout=sign --type=authlogic UserSessions Users

@@ -93,6 +93,19 @@ protected
     end
   end
   
+  def manifest_for_authlogic(m)
+    signup_controller_path  = @controller_file_path
+    signin_controller_path  = @model_name.downcase # just here I use the second argument as a controller path
+    @resource_name          = @controller_path.singularize
+    if haml?
+      m.template('view_signin.html.haml',  File.join("app/views", signup_controller_path, "new.html.haml"))
+      m.template('view_signup.html.haml',  File.join("app/views", signin_controller_path, "new.html.haml"))
+    else
+      m.template('view_signin.html.erb',  File.join("app/views", signup_controller_path, "new.html.erb"))
+      m.template('view_signup.html.erb',  File.join("app/views", signin_controller_path, "new.html.erb"))
+    end
+  end
+  
   def get_columns
     excluded_column_names = %w[id created_at updated_at]
     Kernel.const_get(@model_name).columns.reject{|c| excluded_column_names.include?(c.name) }.collect{|c| Rails::Generator::GeneratedAttribute.new(c.name, c.type)}
