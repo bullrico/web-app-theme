@@ -1,0 +1,27 @@
+#sidebar
+  +round-corners
+
+  .block
+    +round-corners
+    background: #ffffff
+
+  h3
+    +round-top-corners
+    background = !ThemeMainColor
+    color: #ffffff
+    border-bottom: 10px solid #262626
+
+  ul
+    &.navigation
+      +round-bottom-corners
+
+    li
+      a
+        &:link, &:visited
+          background: #ffffff
+          border-bottom: 1px solid #f0f0ee
+          text-decoration: none
+
+        &:hover, &:active
+          background: #470E0E
+          color: #ffffff

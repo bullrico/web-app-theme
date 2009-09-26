@@ -1,0 +1,82 @@
+.small
+  font-size: 11px
+
+.gray
+  color: #999999
+
+.hightlight
+  background-color: #FFFFCC
+
+a
+  -moz-outline: none
+
+  &:link, &:visited, &:hover, &:active
+    color = !ThemeMainColor
+
+h1, h2, h3
+  color = !ThemeMainColor
+
+hr
+  background: #f0f0ee
+  color: #f0f0ee
+
+ul.list
+  li
+    +round-corners
+    border-bottom-color: #F0F0EE
+    border-bottom-width: 1px
+    border-bottom-style: solid
+
+    .item
+      .avatar
+        border-color: #F0F0EE
+        border-width: 1px
+        border-style: solid
+        padding: 2px
+
+
+
+body
+  color: #222
+  background: #f0f0ee
+  font-family: helvetica, arial, sans-serif
+
+
+#main 
+  +round-top-corners
+
+  .block
+    +round-corners
+    .content
+      +round-bottom-corners
+      background: #ffffff
+      padding-top: 1px
+
+      h2
+        margin-left: 15px
+
+#box
+  .block
+    +round-corners
+    background: #FFF
+
+    h2
+      +round-top-corners
+      background = !ThemeMainColor
+      color: #FFF
+
+
+.table
+  +round-corners
+  th
+    background: #262626
+    color: #FFF
+
+    &.first
+      +round-top-left-corner
+
+    &.last
+      +round-top-right-corner
+
+  td
+    border-bottom: 1px solid #F0F0EE

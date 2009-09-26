@@ -1,0 +1,69 @@
+#main-navigation
+  +round-top-corners
+  background: #262626
+
+  ul li
+    +round-top-corners
+    background: #262626
+    padding-left: 15px
+    margin-right: 0
+
+    &.active
+      background: #f0f0ee
+      padding: 0
+      margin-left: 15px
+
+      a
+        padding: 8px 15px
+
+        &:link, &:visited, &:hover, &:active
+          color: #262626
+
+    a
+      padding: 8px 0
+
+      &:link, &:visited, &:hover, &:active
+        text-decoration: none
+        color: #FFF
+
+
+
+.secondary-navigation
+  +round-top-corners
+  background = !ThemeMainColor
+  border-bottom-color: #262626
+
+  ul
+    li
+      &.first
+        +round-top-left-corner
+        a
+          +round-top-left-corner
+
+      &.active
+        background-color: #262626
+
+        a:hover
+          background-color: #262626
+
+      a
+        &:link, &:visited, &:hover, &:active
+          text-decoration: none
+          color: #FFF
+
+        &:hover
+          background: #470E0E
+
+
+
+#user-navigation
+  top: auto
+  bottom: 5px
+  right: 25px
+
+  ul
+    li
+      a
+        &:link, &:visited, &:hover, &:active
+          text-decoration: none
+          color: #FFF
