@@ -18,11 +18,37 @@ class ThemeGenerator < Rails::Generator::Base
     record do |m|            
       m.directory("app/views/layouts")
       if haml?
-        m.directory("public/stylesheets/sass/web_app_theme/themes/")
         m.template("view_layout_#{options[:layout_type]}.html.haml", File.join("app/views/layouts", "#{@name}.html.haml")) unless options[:no_layout]
-        m.template("../../../stylesheets/base.sass",  File.join("public/stylesheets/sass/web_app_theme/", "base.sass"))
-        m.template("web_app_theme_override.sass",  File.join("public/stylesheets/sass/", "web_app_theme.sass"))
-        m.template("../../../stylesheets/themes/#{options[:theme]}/style.sass",  File.join("public/stylesheets/sass/web_app_theme/themes/", "#{options[:theme]}.sass"))      
+
+        # Base
+        frompath = "../../../stylesheets/sass/base"
+        topath   = "public/stylesheets/sass/base"
+        m.directory(topath)
+        m.template(File.join(frompath, '_base.sass'), File.join(topath, '_base.sass'))
+        m.template(File.join(frompath, '_footer.sass'), File.join(topath, '_footer.sass'))
+        m.template(File.join(frompath, '_form.sass'), File.join(topath, '_form.sass'))
+        m.template(File.join(frompath, '_header.sass'), File.join(topath, '_header.sass'))
+        m.template(File.join(frompath, '_main.sass'), File.join(topath, '_main.sass'))
+        m.template(File.join(frompath, '_navigation.sass'), File.join(topath, '_navigation.sass'))
+        m.template(File.join(frompath, '_pagination.sass'), File.join(topath, '_pagination.sass'))
+        m.template(File.join(frompath, '_sidebar.sass'), File.join(topath, '_sidebar.sass'))
+
+        # Theme
+        frompath = "../../../stylesheets/sass/#{options[:theme]}"
+        topath   = "public/stylesheets/sass/#{options[:theme]}"
+        m.directory(topath)
+        m.template(File.join(frompath, '_corners.sass'), File.join(topath, '_corners.sass'))
+        m.template(File.join(frompath, '_flash.sass'), File.join(topath, '_flash.sass'))
+        m.template(File.join(frompath, '_footer.sass'), File.join(topath, '_footer.sass'))
+        m.template(File.join(frompath, '_form.sass'), File.join(topath, '_form.sass'))
+        m.template(File.join(frompath, '_header.sass'), File.join(topath, '_header.sass'))
+        m.template(File.join(frompath, '_main.sass'), File.join(topath, '_main.sass'))
+        m.template(File.join(frompath, '_navigation.sass'), File.join(topath, '_navigation.sass'))
+        m.template(File.join(frompath, '_pagination.sass'), File.join(topath, '_pagination.sass'))
+        m.template(File.join(frompath, '_sidebar.sass'), File.join(topath, '_sidebar.sass'))
+        m.template(File.join(frompath, 'screen.sass'), File.join(topath, '_screen.sass'))
+
+        m.template("web_app_theme_override.sass",  File.join("public/stylesheets/sass/", "screen.sass"))
       else
         m.directory("public/stylesheets/themes/#{options[:theme]}/")
         m.template("view_layout_#{options[:layout_type]}.html.erb", File.join("app/views/layouts", "#{@name}.html.erb")) unless options[:no_layout]
