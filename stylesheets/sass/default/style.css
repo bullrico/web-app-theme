@@ -6,6 +6,12 @@
   clear: both;
   height: 0; }
 
+a img {
+  border: none; }
+
+p {
+  margin: 15px 0; }
+
 h1 {
   margin: 15px 0;
   font-size: 22px;
@@ -30,199 +36,6 @@ hr {
   height: 1px;
   border: 0; }
 
-p {
-  margin: 15px 0; }
-
-a img {
-  border: none; }
-
-body {
-  font-size: 12px;
-  font-family: sans-serif; }
-
-#container {
-  min-width: 960px; }
-
-#header, #wrapper {
-  padding: 0 20px; }
-
-#header {
-  position: relative;
-  padding-top: 1px; }
-  #header h1 {
-    margin: 0;
-    padding: 10px 0;
-    font-size: 30px; }
-    #header h1 a:link, #header h1 a:active, #header h1 a:hover, #header h1 a:visited {
-      text-decoration: none; }
-
-#main {
-  width: 70%;
-  float: left; }
-
-.actions-bar {
-  padding: 10px 1px; }
-  .actions-bar .actions {
-    float: left; }
-  .actions-bar .pagination {
-    float: right;
-    padding: 1px 0; }
-
-#sidebar {
-  width: 25%;
-  float: right; }
-  #sidebar h3 {
-    padding: 10px 15px;
-    margin: 0;
-    font-size: 13px; }
-  #sidebar .block {
-    margin-bottom: 20px;
-    padding-bottom: 10px; }
-    #sidebar .block .content {
-      padding: 0 15px; }
-  #sidebar ul.navigation li a:link, #sidebar ul.navigation li a:visited {
-    display: block;
-    padding: 10px 15px; }
-  #sidebar .block .sidebar-block, #sidebar .notice {
-    padding: 10px; }
-
-#wrapper {
-  padding-top: 20px; }
-
-#main .block {
-  margin-bottom: 20px;
-  padding-top: 1px; }
-  #main .block .content .inner {
-    padding: 0 15px 15px; }
-#main .main p.first {
-  margin-top: 0; }
-
-#user-navigation {
-  position: absolute;
-  top: 0px;
-  right: 20px; }
-
-#main-navigation {
-  width: 100%; }
-
-#user-navigation ul, #main-navigation ul, .secondary-navigation ul, #sidebar ul.navigation {
-  margin: 0;
-  padding: 0;
-  list-style-type: none; }
-
-#user-navigation ul li, #main-navigation ul li, .secondary-navigation ul li {
-  float: left; }
-
-#main-navigation ul li {
-  margin-right: 5px; }
-
-#user-navigation ul li {
-  padding: 5px 10px; }
-
-#main-navigation ul li a:link, #main-navigation ul li a:visited, #main-navigation ul li a:hover, #main-navigation ul li a:active {
-  text-decoration: none; }
-
-.secondary-navigation ul li a:link, .secondary-navigation ul li a:visited, .secondary-navigation ul li a:hover, .secondary-navigation ul li a:active {
-  text-decoration: none; }
-
-#user-navigation ul li a:link, #user-navigation ul li a:visited, #user-navigation ul li a:hover, #user-navigation ul li a:active {
-  text-decoration: none; }
-
-#main-navigation ul li a {
-  font-size: 15px;
-  display: block;
-  padding: 8px 15px; }
-
-.secondary-navigation {
-  font-size: 13px;
-  border-bottom-width: 10px;
-  border-bottom-style: solid; }
-  .secondary-navigation ul li a {
-    display: block;
-    padding: 10px 15px; }
-
-#footer {
-  padding-bottom: 20px; }
-
-.pagination a {
-  padding: 2px 5px;
-  margin-right: 5px;
-  display: block;
-  float: left;
-  border-style: solid;
-  border-width: 1px; }
-.pagination span {
-  padding: 2px 5px;
-  margin-right: 5px;
-  display: block;
-  float: left;
-  border-style: solid;
-  border-width: 1px; }
-  .pagination span.current {
-    font-weight: bold; }
-.pagination a {
-  text-decoration: none; }
-
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 15px; }
-  .table th {
-    padding: 10px;
-    font-weight: bold;
-    text-align: left; }
-    .table th.first {
-      width: 30px; }
-    .table th.last {
-      width: 200px; }
-  .table .checkbox {
-    margin-left: 10px; }
-  .table td {
-    padding: 10px; }
-    .table td.last {
-      text-align: right; }
-
-input.checkbox {
-  margin: 0;
-  padding: 0; }
-
-.form .group {
-  margin-bottom: 15px; }
-.form div.left {
-  width: 20%;
-  float: left; }
-.form div.right {
-  width: 75%;
-  float: right; }
-.form .columns .column {
-  width: 48%; }
-.form .columns .left {
-  float: left; }
-.form .columns .right {
-  float: right; }
-.form label.label, .form input.text_field, .form textarea.text_area {
-  font-size: 1.2em;
-  padding: 1px 0;
-  margin: 0; }
-.form label.right {
-  text-align: right; }
-.form input.checkbox, .form input.radio {
-  margin-right: 5px; }
-.form label.checkbox, .form label.radio {
-  line-height: 1.5em; }
-.form label.label {
-  display: block;
-  padding-bottom: 2px;
-  font-weight: bold; }
-.form div.fieldWithErrors label.label {
-  display: inline; }
-.form .fieldWithErrors .error {
-  color: red; }
-.form input.text_field, .form textarea.text_area {
-  width: 100%;
-  border-width: 1px;
-  border-style: solid; }
-
 ul.list {
   margin: 0;
   padding: 0;
@@ -243,6 +56,36 @@ ul.list {
         width: 30px;
         height: 30px; }
 
+body {
+  font-size: 12px;
+  font-family: sans-serif; }
+
+#container {
+  min-width: 960px; }
+
+#wrapper {
+  padding: 0 20px;
+  padding-top: 20px; }
+
+#main {
+  width: 70%;
+  float: left; }
+  #main .block {
+    margin-bottom: 20px;
+    padding-top: 1px; }
+    #main .block .content .inner {
+      padding: 0 15px 15px; }
+  #main .main p.first {
+    margin-top: 0; }
+
+.actions-bar {
+  padding: 10px 1px; }
+  .actions-bar .actions {
+    float: left; }
+  .actions-bar .pagination {
+    float: right;
+    padding: 1px 0; }
+
 #box {
   width: 500px;
   margin: 50px auto; }
@@ -253,6 +96,173 @@ ul.list {
       margin: 0; }
     #box .block .content {
       padding: 10px 20px; }
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px; }
+  .table th {
+    padding: 10px;
+    font-weight: bold;
+    text-align: left; }
+    .table th.first {
+      width: 30px; }
+    .table th.last {
+      width: 200px; }
+  .table .checkbox {
+    margin-left: 10px; }
+  .table td {
+    padding: 10px; }
+    .table td.last {
+      text-align: right; }
+
+#header {
+  position: relative;
+  padding: 0 20px;
+  padding-top: 1px; }
+  #header h1 {
+    margin: 0;
+    padding: 10px 0;
+    font-size: 30px; }
+    #header h1 a:link, #header h1 a:active, #header h1 a:hover, #header h1 a:visited {
+      text-decoration: none; }
+
+#footer {
+  padding-bottom: 20px; }
+
+#main-navigation {
+  width: 100%; }
+  #main-navigation ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
+    #main-navigation ul li {
+      float: left;
+      margin-right: 5px; }
+      #main-navigation ul li a {
+        font-size: 15px;
+        display: block;
+        padding: 8px 15px; }
+        #main-navigation ul li a:link, #main-navigation ul li a:visited, #main-navigation ul li a:hover, #main-navigation ul li a:active {
+          text-decoration: none; }
+
+.secondary-navigation {
+  font-size: 13px;
+  border-bottom-width: 10px;
+  border-bottom-style: solid; }
+  .secondary-navigation ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
+    .secondary-navigation ul li {
+      float: left; }
+      .secondary-navigation ul li a {
+        display: block;
+        padding: 10px 15px; }
+        .secondary-navigation ul li a:link, .secondary-navigation ul li a:visited, .secondary-navigation ul li a:hover, .secondary-navigation ul li a:active {
+          text-decoration: none; }
+
+#user-navigation {
+  position: absolute;
+  top: 0px;
+  right: 20px; }
+  #user-navigation ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
+    #user-navigation ul li {
+      float: left;
+      padding: 5px 10px; }
+      #user-navigation ul li a:link, #user-navigation ul li a:visited, #user-navigation ul li a:hover, #user-navigation ul li a:active {
+        text-decoration: none; }
+
+#sidebar {
+  width: 25%;
+  float: right; }
+  #sidebar h3 {
+    padding: 10px 15px;
+    margin: 0;
+    font-size: 13px; }
+  #sidebar .block {
+    margin-bottom: 20px;
+    padding-bottom: 10px; }
+    #sidebar .block .content {
+      padding: 0 15px; }
+  #sidebar ul.navigation {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
+    #sidebar ul.navigation li a:link, #sidebar ul.navigation li a:visited {
+      display: block;
+      padding: 10px 15px; }
+  #sidebar .block .sidebar-block, #sidebar .notice {
+    padding: 10px; }
+
+.pagination a {
+  padding: 2px 5px;
+  margin-right: 5px;
+  display: block;
+  float: left;
+  border-style: solid;
+  border-width: 1px;
+  text-decoration: none; }
+.pagination span {
+  padding: 2px 5px;
+  margin-right: 5px;
+  display: block;
+  float: left;
+  border-style: solid;
+  border-width: 1px; }
+  .pagination span.current {
+    font-weight: bold; }
+
+.form .group {
+  margin-bottom: 15px; }
+.form .fieldWithErrors .error {
+  color: red; }
+.form div.left {
+  width: 20%;
+  float: left; }
+.form div.right {
+  width: 75%;
+  float: right; }
+.form div.fieldWithErrors label.label {
+  display: inline; }
+.form .columns .column {
+  width: 48%; }
+.form .columns .left {
+  float: left; }
+.form .columns .right {
+  float: right; }
+.form label.label {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0;
+  padding: 1px 0;
+  padding-bottom: 2px;
+  display: block; }
+.form label.right {
+  text-align: right; }
+.form label.checkbox, .form label.radio {
+  line-height: 1.5em; }
+.form input.text_field, .form input.text_area {
+  font-size: 1.2em;
+  padding: 1px 0;
+  margin: 0; }
+.form input.checkbox, .form input.radio {
+  margin-right: 5px; }
+.form input.text_field {
+  width: 100%;
+  border-width: 1px;
+  border-style: solid; }
+.form textarea.text_area {
+  width: 100%;
+  border-width: 1px;
+  border-style: solid; }
+
+input .checkbox {
+  margin: 0;
+  padding: 0; }
 
 .small {
   font-size: 11px; }
