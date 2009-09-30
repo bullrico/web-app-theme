@@ -46,7 +46,7 @@ protected
   
   def manifest_for_crud(m)
     @columns = get_columns
-    m.directory(File.join('app/views', @controller_file_path))                        
+    m.directory(File.join('app/views', @controller_file_path))
 
     if haml?
       m.template('view_tables.html.haml',  File.join("app/views", @controller_file_path, "index.html.haml"))
@@ -84,6 +84,8 @@ protected
     signup_controller_path  = @controller_file_path
     signin_controller_path  = @model_name.downcase # just here I use the second argument as a controller path
     @resource_name          = @controller_path.singularize
+    m.directory(File.join('app/views', signup_controller_path))
+    m.directory(File.join('app/views', signin_controller_path))
     if haml?
       m.template('view_signup.html.haml',  File.join("app/views", signup_controller_path, "new.html.haml"))
       m.template('view_signin.html.haml',  File.join("app/views", signin_controller_path, "new.html.haml"))
@@ -97,6 +99,8 @@ protected
     signup_controller_path  = @controller_file_path
     signin_controller_path  = @model_name.downcase # just here I use the second argument as a controller path
     @resource_name          = @controller_path.singularize
+    m.directory(File.join('app/views', signup_controller_path))
+    m.directory(File.join('app/views', signin_controller_path))
     if haml?
       m.template('view_signin.html.haml',  File.join("app/views", signup_controller_path, "new.html.haml"))
       m.template('view_signup.html.haml',  File.join("app/views", signin_controller_path, "new.html.haml"))
