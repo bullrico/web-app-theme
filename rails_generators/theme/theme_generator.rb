@@ -6,7 +6,8 @@ class ThemeGenerator < Rails::Generator::Base
                   :no_layout => false,
                   :erb => false,
                   :haml => false,
-                  :list => false
+                  :list => false,
+                  :sass_dir => "app/stylesheets/themes"
     
   def initialize(runtime_args, runtime_options = {})
     super
@@ -22,7 +23,7 @@ class ThemeGenerator < Rails::Generator::Base
 
         # Base
         frompath = "../../../stylesheets/sass/base"
-        topath   = "public/stylesheets/sass/base"
+        topath   = "#{options[:sass_dir]}/base"
         m.directory(topath)
         m.template(File.join(frompath, '_base.sass'), File.join(topath, '_base.sass'))
         m.template(File.join(frompath, '_footer.sass'), File.join(topath, '_footer.sass'))
@@ -34,8 +35,8 @@ class ThemeGenerator < Rails::Generator::Base
         m.template(File.join(frompath, '_sidebar.sass'), File.join(topath, '_sidebar.sass'))
 
         # Theme
-        frompath = "../../../stylesheets/sass/#{options[:theme]}"
-        topath   = "public/stylesheets/sass/#{options[:theme]}"
+        frompath = "../../../stylesheets/sass/default"
+        topath   = "#{options[:sass_dir]}/#{options[:theme]}"
         m.directory(topath)
         m.template(File.join(frompath, '_corners.sass'), File.join(topath, '_corners.sass'))
         m.template(File.join(frompath, '_flash.sass'), File.join(topath, '_flash.sass'))
@@ -48,12 +49,12 @@ class ThemeGenerator < Rails::Generator::Base
         m.template(File.join(frompath, '_sidebar.sass'), File.join(topath, '_sidebar.sass'))
         m.template(File.join(frompath, 'screen.sass'), File.join(topath, '_screen.sass'))
 
-        m.template("web_app_theme_override.sass",  File.join("public/stylesheets/sass/", "screen.sass"))
+        m.template("web_app_theme_override.sass",  File.join("#{options[:sass_dir]}/default/", "screen.sass"))
       else
-        m.directory("public/stylesheets/themes/#{options[:theme]}/")
+        m.directory("app/stylesheets/themes/#{options[:theme]}/")
         m.template("view_layout_#{options[:layout_type]}.html.erb", File.join("app/views/layouts", "#{@name}.html.erb")) unless options[:no_layout]
-        m.template("../../../stylesheets/base.css",  File.join("public/stylesheets", "web_app_theme.css"))
-        m.template("web_app_theme_override.css",  File.join("public/stylesheets", "web_app_theme_override.css"))
+        m.template("../../../stylesheets/base.css",  File.join("public/stylesheets/themes", "web_app_theme.css"))
+        m.template("web_app_theme_override.css",  File.join("public/stylesheets/themes", "web_app_theme_override.css"))
         m.template("../../../stylesheets/themes/#{options[:theme]}/style.css",  File.join("public/stylesheets/themes/#{options[:theme]}", "style.css"))      
       end
     end
@@ -77,6 +78,8 @@ protected
     opt.on("--erb", "force the use of erb") { |v| options[:erb] = true }
 
     opt.on("--list", "Show available themes") { |v| options[:list] = true }
+    opt.on("--sass_dir", "Sass directory") { |v| options[:sass_dir] = v }
+    
   end
 
   def haml?
